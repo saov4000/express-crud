@@ -44,15 +44,27 @@ app.get('/detalhes/:id',(req,res)=>{
         if (err) throw err
         console.log(result[0].id)
         res.render('detalhes',{resultado:result})
-      }); 
+      }) 
 })
 
-app.put('/atualizar',(req,res)=>{
-    res.render('atualiza')
+app.post('/atualizar',(req,res)=>{
+    var id = req.body.id
+    var nome = req.body.nome
+    var sexo = req.body.sexo
+    var cidade = req.body.cidade
+    connection.query("UPDATE aluno SET nome='"+nome+"',sexo='"+sexo+"',cidade='"+cidade+"' WHERE id="+id, function(err,result,fields){
+        if(err) throw err;
+        console.log(result)
+        res.redirect('/')
+    })
 })
 
-app.delete('/delete',(req,res)=>{
-    res.render('deleta')
+app.get('/delete/:id',(req,res)=>{
+    var id = req.params.id
+    connection.query("DELETE FROM aluno WHERE id="+id, function(err,result,fields){
+        console.log('deletando '+id)
+        res.redirect('/')
+    })
 })
 
 app.listen(4000,()=>{

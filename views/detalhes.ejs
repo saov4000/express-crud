@@ -6,9 +6,9 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <form action="/atualiza" method="post">
+                <form action="/atualizar" method="post">
                     <label>Id</label>
-                    <input type="text" class="form-control" name="id" value="<%= resultado[0].id %>" disabled>
+                    <input type="text" class="form-control" name="id" value="<%= resultado[0].id %>">
                     <label>Nome</label>
                     <input type="text" class="form-control" name="nome" value="<%= resultado[0].nome %>">
                     <label>Sexo</label>
@@ -16,7 +16,7 @@
                     <label>Cidade</label>
                     <input type="text" class="form-control" name="cidade" value="<%= resultado[0].cidade %>">
                     <button class="btn btn-primary">Atualizar</button>
-                    <a href="/deleta" class="btn btn-danger">Excluir</a>
+                    <a href="/delete/<%= resultado[0].id %>" class="btn btn-danger">Excluir</a>
                 </form>
             </div>
         </div>
