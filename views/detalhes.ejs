@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <div class="bg-primary">
+        <h1 style="color:white;" class="text-center">Detalhes</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/atualiza" method="post">
+                    <label>Id</label>
+                    <input type="text" class="form-control" name="id" value="<%= resultado[0].id %>" disabled>
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="nome" value="<%= resultado[0].nome %>">
+                    <label>Sexo</label>
+                    <input type="text" class="form-control" name="sexo" value="<%= resultado[0].sexo %>">
+                    <label>Cidade</label>
+                    <input type="text" class="form-control" name="cidade" value="<%= resultado[0].cidade %>">
+                    <button class="btn btn-primary">Atualizar</button>
+                    <a href="/deleta" class="btn btn-danger">Excluir</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>

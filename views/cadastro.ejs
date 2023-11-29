@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <div class="bg-primary">
+        <h1 style="color:white;" class="text-center">Cadastro de Alunos</h1>
+    </div>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/salvar" method="POST">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" name="nome">
+                    <label>Sexo</label>
+                    <input type="text" class="form-control" name="sexo">
+                    <label>Cidade</label>
+                    <input type="text" class="form-control" name="cidade">
+                    <br>
+                    <button class="btn btn-primary">Casdastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('partials/footer.ejs') %>
